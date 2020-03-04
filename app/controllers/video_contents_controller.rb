@@ -6,8 +6,12 @@ class VideoContentsController < ApplicationController
 	end
 
 	def seasons_list
-		byebug
 		seasons = Season.all.order(:created_at)
 		render jsonapi: seasons, include: [:episodes]
+	end
+
+	def list_movies_and_seasons
+		movies_and_seasons = VideoContent.all.order(:created_at)
+		render jsonapi: movies_and_seasons
 	end
 end
