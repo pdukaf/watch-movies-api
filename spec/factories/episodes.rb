@@ -14,6 +14,6 @@ FactoryBot.define do
 	factory :episode do |f|
 		f.title { Faker::Name.name }
 		f.plot { 1 }
-		f.season_id {1}
+		f.total_no_of_episode {10}
 	end
 end
