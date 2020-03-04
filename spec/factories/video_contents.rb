@@ -9,5 +9,6 @@ FactoryBot.define do
 		f.title {Faker::Name.name}
 		f.plot {2}
 		f.type {"Season"}
+		f.number {Faker::Number.number(digits: 2)}
 	end
 end
