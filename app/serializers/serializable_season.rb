@@ -5,5 +5,5 @@ class SerializableSeason < JSONAPI::Serializable::Resource
 			episodes = @object&.episodes.order(:id)
 		end
 	end
-	attributes :id, :title, :plot, :number
+	attributes :id, :title, :plot, :number, :created_at
 end

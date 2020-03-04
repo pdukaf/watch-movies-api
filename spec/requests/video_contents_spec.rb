@@ -26,4 +26,13 @@ RSpec.describe 'VideoContent API', type: :request do
       expect(json['data'].first).to include("relationships")
   	end
   end
+
+  describe 'GET/movies-seasons' do
+    before {get'/movies-seasons'}
+    it 'return all movies and seasons' do
+      expect(json).not_to be_empty
+      expect(response).to have_http_status(200)
+      expect(json['data'].size).to eq(20)
+    end
+  end
 end

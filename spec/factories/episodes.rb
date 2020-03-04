@@ -15,5 +15,6 @@ FactoryBot.define do
 		f.title { Faker::Name.name }
 		f.plot { 1 }
 		f.total_no_of_episode {10}
+		f.created_at {DateTime.now}
 	end
 end
