@@ -11,4 +11,5 @@
 #  updated_at :datetime         not null
 #
 class VideoContent < ApplicationRecord
+	validates_presence_of :title, :plot
 end

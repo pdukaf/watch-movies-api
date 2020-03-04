@@ -11,4 +11,6 @@
 #  updated_at :datetime         not null
 #
 class Season < VideoContent
+	validates_presence_of :number
+	has_many :episodes
 end
