@@ -11,4 +11,6 @@
 #  season_id           :integer
 #
 class Episode < ApplicationRecord
+	validates_presence_of :title, :plot, :total_no_of_episode, :season_id
+	belongs_to :season
 end
