@@ -30,4 +30,10 @@ FactoryBot.define do
 		f.price {10.99}
 		f.video_quality {"No Quality"}
 	end
+
+	factory :past_purchase, class: Purchase do |f|
+		f.price {2.99}
+		f.video_quality {"SD"}
+		f.created_at {DateTime.now - 3.days}
+	end
 end

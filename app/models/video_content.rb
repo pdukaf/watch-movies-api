@@ -11,5 +11,6 @@
 #  updated_at :datetime         not null
 #
 class VideoContent < ApplicationRecord
+	has_many :purchases, dependent: :destroy
 	validates_presence_of :title, :plot
 end

@@ -21,7 +21,19 @@
 #  fk_rails_...  (video_content_id => video_contents.id)
 #
 class Purchase < ApplicationRecord
-	validates_presence_of :price, :video_quality
+	validates_presence_of :price
   belongs_to :video_content
   belongs_to :user
+	validate :validate_purchase
+
+  def validate_purchase
+   	video = user.purchases.where(video_content_id: self.video_content_id).last
+   	if video.present? && (video.created_at + 3.days) < DateTime.now
+   		return true
+   	elsif video.nil?
+   		return true
+   	else
+    	errors.add(:purchase, "Sorry, the #{self.video_content.type} you are trying to purchase is already exist.")
+    end
+  end
 end

@@ -1,5 +1,5 @@
 class SerializableSeason < JSONAPI::Serializable::Resource
-	type "movies"
+	type "season"
 	has_many :episodes do
 		data do
 			episodes = @object&.episodes.order(:id)
