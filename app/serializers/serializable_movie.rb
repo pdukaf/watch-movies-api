@@ -1,4 +1,4 @@
 class SerializableMovie < JSONAPI::Serializable::Resource
-	type "movies"
+	type "movie"
 	attributes :id, :title, :plot, :created_at
 end

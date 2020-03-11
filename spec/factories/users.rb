@@ -10,5 +10,9 @@
 FactoryBot.define do
 	factory :user do |f|
 		f.email {"test@example.com"}
+	end
+
+	factory :user_1, class: User do |f|
+		f.email {"hello2gmail.com"}
 	end	
 end
