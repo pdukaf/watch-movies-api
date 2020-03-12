@@ -38,4 +38,11 @@ RSpec.describe 'Users API', type: :request do
 			end
 		end
 	end
+
+	describe 'GET/users/:id/library' do
+		before {get"/users/#{user.id}/library"}
+		it 'returns all movies and seasons purchased by user' do
+			expect(response).to have_http_status(200)
+		end
+	end
 end

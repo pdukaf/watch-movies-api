@@ -26,6 +26,8 @@ class Purchase < ApplicationRecord
   belongs_to :user
 	validate :validate_purchase
 
+  scope :available_videos, -> {where("created_at > ?", 3.days.ago)}
+
   def validate_purchase
    	video = user.purchases.where(video_content_id: self.video_content_id).last
    	if video.present? && (video.created_at + 3.days) < DateTime.now
