@@ -10,6 +10,11 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def library
+		purchased_videos = @user.purchases.available_videos.order(created_at: :asc)
+		render jsonapi: purchased_videos, include:[:video_content]
+	end
+
 	private
 
 	def set_user

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 	get '/seasons', to: "video_contents#seasons_list"
 	get '/movies-seasons', to: "video_contents#list_movies_and_seasons"
 	post 'users/:id/purchases', to: "users#purchase_item"
+	get 'users/:id/library', to: "users#library"
 end
