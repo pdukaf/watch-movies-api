@@ -5,6 +5,7 @@
 #  id               :bigint           not null, primary key
 #  price            :decimal(3, 2)    default("2.99")
 #  video_quality    :string
+#  voucher_number   :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  user_id          :bigint           not null
