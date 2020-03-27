@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_152226) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "voucher_number"
+    t.integer "voucher_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
     t.index ["video_content_id"], name: "index_purchases_on_video_content_id"
   end
