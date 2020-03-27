@@ -22,6 +22,10 @@ class UsersController < ApplicationController
 	end
 
 	def purchase_params
-		params.require(:purchase).permit(:price, :video_quality, :video_content_id)
+		params.require(:purchase).permit(:price, :video_quality, :video_content_id, :voucher_number)
+	end
+
+	def find_voucher
+
 	end
 end

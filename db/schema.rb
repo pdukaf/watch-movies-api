@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_27_152914) do
+ActiveRecord::Schema.define(version: 2020_03_27_155532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_152914) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "voucher_id"
+    t.string "voucher_number"
     t.index ["user_id"], name: "index_purchases_on_user_id"
     t.index ["video_content_id"], name: "index_purchases_on_video_content_id"
   end
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_152914) do
     t.string "voucher_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "used", default: false
   end
 
   add_foreign_key "purchases", "users"
